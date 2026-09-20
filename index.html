@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Flores Amarillas para Ana 🌻</title>
+  
+  <!-- Fuentes externas y Confetti -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  
+  <!-- Estilos CSS externos -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <canvas id="particles-canvas"></canvas>
+
+  <div class="container">
+    <header>
+      <div class="tagline">21 de Marzo</div>
+      <h1>Flores Amarillas para Ana 🌻</h1>
+    </header>
+
+    <div class="interactive-card">
+      <div class="flower-stage" id="flowerContainer">
+        <svg class="sunflower-svg unbloomed" id="sunflower" viewBox="0 0 200 200">
+          <g transform="translate(100, 100)">
+            <!-- Tallo y Hojas -->
+            <path d="M 0,0 Q 10,60 0,100" stroke="#65a30d" stroke-width="8" fill="none" stroke-linecap="round" />
+            <path d="M 0,50 Q -30,40 -20,20 Q 0,30 0,50" fill="#4d7c0f" />
+            <path d="M 0,70 Q 30,60 20,40 Q 0,50 0,70" fill="#4d7c0f" />
+            
+            <!-- Pétalos -->
+            <g id="petalsGroup">
+              <path class="petal petal-1" d="M 0,0 Q -12,-50 0,-85 Q 12,-50 0,0" fill="#fbbf24" stroke="#d97706" stroke-width="1.5" />
+              <path class="petal petal-2" d="M 0,0 Q -12,-50 0,-85 Q 12,-50 0,0" fill="#f59e0b" stroke="#d97706" stroke-width="1.5" />
+              <path class="petal petal-3" d="M 0,0 Q -12,-50 0,-85 Q 12,-50 0,0" fill="#fbbf24" stroke="#d97706" stroke-width="1.5" />
+              <path class="petal petal-4" d="M 0,0 Q -12,-50 0,-85 Q 12,-50 0,0" fill="#f59e0b" stroke="#d97706" stroke-width="1.5" />
+              <path class="petal petal-5" d="M 0,0 Q -12,-50 0,-85 Q 12,-50 0,0" fill="#fbbf24" stroke="#d97706" stroke-width="1.5" />
+              <path class="petal petal-6" d="M 0,0 Q -12,-50 0,-85 Q 12,-50 0,0" fill="#f59e0b" stroke="#d97706" stroke-width="1.5" />
+              <path class="petal petal-7" d="M 0,0 Q -12,-50 0,-85 Q 12,-50 0,0" fill="#fbbf24" stroke="#d97706" stroke-width="1.5" />
+              <path class="petal petal-8" d="M 0,0 Q -12,-50 0,-85 Q 12,-50 0,0" fill="#f59e0b" stroke="#d97706" stroke-width="1.5" />
+              <path class="petal petal-9" d="M 0,0 Q -12,-50 0,-85 Q 12,-50 0,0" fill="#fbbf24" stroke="#d97706" stroke-width="1.5" />
+              <path class="petal petal-10" d="M 0,0 Q -12,-50 0,-85 Q 12,-50 0,0" fill="#f59e0b" stroke="#d97706" stroke-width="1.5" />
+              <path class="petal petal-11" d="M 0,0 Q -12,-50 0,-85 Q 12,-50 0,0" fill="#fbbf24" stroke="#d97706" stroke-width="1.5" />
+              <path class="petal petal-12" d="M 0,0 Q -12,-50 0,-85 Q 12,-50 0,0" fill="#f59e0b" stroke="#d97706" stroke-width="1.5" />
+            </g>
+
+            <!-- Centro del Girasol -->
+            <circle cx="0" cy="0" r="32" fill="#78350f" />
+            <circle cx="0" cy="0" r="26" fill="#451a03" stroke="#92400e" stroke-width="2" stroke-dasharray="4,2" />
+          </g>
+        </svg>
+      </div>
+
+      <div class="tap-hint" id="tapHint">
+        <span>✨ Toca la flor para ver la magia</span>
+      </div>
+
+      <div class="message-box">
+        <p>Un detalle especial para llenar tu día de luz, alegría y buena vibra en este comienzo de la primavera.</p>
+        
+        <div class="quote-card">
+          "Hay personas que son como el sol: llegan y todo a su alrededor se vuelve más brillante."
+        </div>
+      </div>
+
+      <div class="audio-control" id="audioToggle">
+        <button class="audio-btn" id="audioIcon">▶</button>
+        <span class="audio-text" id="audioLabel">Música de primavera</span>
+      </div>
+    </div>
+
+    <div class="letter-section">
+      <div class="envelope" id="envelope">
+        <div class="envelope-title">
+          <span>✉️</span>
+          <span>Abrir mensaje para Ana</span>
+        </div>
+        <div class="letter-content" id="letterContent">
+          <p><strong>Hola Ana,</strong></p><br>
+          <p>No quería dejar pasar este 21 de marzo sin enviarte este pequeño detalle interactivo.</p><br>
+          <p>Que este día y esta nueva temporada te traigan muchísima alegría, paz y momentos bonitos. Gracias por siempre brindar una gran energía y bonita vibra.</p><br>
+          <p>¡Que tengas un excelente y radiante día de las flores amarillas! 🌼✨</p>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      Hecho con mucho cariño para ti 💛
+    </footer>
+  </div>
+
+  <!-- Lógica JavaScript externa -->
+  <script src="script.js"></script>
+</body>
+</html>
