@@ -2,16 +2,16 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Flores Amarillas para Ana 🌻</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lirios para Ana 💛</title>
   
   <!-- Fuentes externas y Confetti -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-  
-  <!-- Estilos CSS externos -->
+
+  <!-- Estilos CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -20,81 +20,95 @@
 
   <div class="container">
     <header>
-      <div class="tagline">21 de Marzo</div>
-      <h1>Flores Amarillas para Ana 🌻</h1>
+      <div class="tagline">21 DE MARZO</div>
+      <h1>Un Lirio Amarillo para Ana 🪷</h1>
     </header>
 
     <div class="interactive-card">
-      <div class="flower-stage" id="flowerContainer">
-        <svg class="sunflower-svg unbloomed" id="sunflower" viewBox="0 0 200 200">
-          <g transform="translate(100, 100)">
-            <!-- Tallo y Hojas -->
-            <path d="M 0,0 Q 10,60 0,100" stroke="#65a30d" stroke-width="8" fill="none" stroke-linecap="round" />
-            <path d="M 0,50 Q -30,40 -20,20 Q 0,30 0,50" fill="#4d7c0f" />
-            <path d="M 0,70 Q 30,60 20,40 Q 0,50 0,70" fill="#4d7c0f" />
-            
-            <!-- Pétalos -->
-            <g id="petalsGroup">
-              <path class="petal petal-1" d="M 0,0 Q -12,-50 0,-85 Q 12,-50 0,0" fill="#fbbf24" stroke="#d97706" stroke-width="1.5" />
-              <path class="petal petal-2" d="M 0,0 Q -12,-50 0,-85 Q 12,-50 0,0" fill="#f59e0b" stroke="#d97706" stroke-width="1.5" />
-              <path class="petal petal-3" d="M 0,0 Q -12,-50 0,-85 Q 12,-50 0,0" fill="#fbbf24" stroke="#d97706" stroke-width="1.5" />
-              <path class="petal petal-4" d="M 0,0 Q -12,-50 0,-85 Q 12,-50 0,0" fill="#f59e0b" stroke="#d97706" stroke-width="1.5" />
-              <path class="petal petal-5" d="M 0,0 Q -12,-50 0,-85 Q 12,-50 0,0" fill="#fbbf24" stroke="#d97706" stroke-width="1.5" />
-              <path class="petal petal-6" d="M 0,0 Q -12,-50 0,-85 Q 12,-50 0,0" fill="#f59e0b" stroke="#d97706" stroke-width="1.5" />
-              <path class="petal petal-7" d="M 0,0 Q -12,-50 0,-85 Q 12,-50 0,0" fill="#fbbf24" stroke="#d97706" stroke-width="1.5" />
-              <path class="petal petal-8" d="M 0,0 Q -12,-50 0,-85 Q 12,-50 0,0" fill="#f59e0b" stroke="#d97706" stroke-width="1.5" />
-              <path class="petal petal-9" d="M 0,0 Q -12,-50 0,-85 Q 12,-50 0,0" fill="#fbbf24" stroke="#d97706" stroke-width="1.5" />
-              <path class="petal petal-10" d="M 0,0 Q -12,-50 0,-85 Q 12,-50 0,0" fill="#f59e0b" stroke="#d97706" stroke-width="1.5" />
-              <path class="petal petal-11" d="M 0,0 Q -12,-50 0,-85 Q 12,-50 0,0" fill="#fbbf24" stroke="#d97706" stroke-width="1.5" />
-              <path class="petal petal-12" d="M 0,0 Q -12,-50 0,-85 Q 12,-50 0,0" fill="#f59e0b" stroke="#d97706" stroke-width="1.5" />
+      <div class="bloom-stage" id="flower-container">
+        <!-- SVG Lirio Amarillo Elegante -->
+        <svg class="lily-svg" viewBox="0 0 200 240" id="lily">
+          <!-- Tallo y Hojas base -->
+          <g transform="translate(100, 120)">
+            <path class="stem" d="M 0,0 Q -5,60 0,110" fill="none" stroke="#5a8734" stroke-width="5" stroke-linecap="round"/>
+            <path class="leaf leaf-left" d="M -2,40 C -30,30 -40,10 -25,-5 C -15,10 -5,30 -2,40 Z" fill="#6ba03d"/>
+            <path class="leaf leaf-right" d="M 2,55 C 30,45 45,25 30,10 C 20,25 5,45 2,55 Z" fill="#5a8734"/>
+          </g>
+
+          <!-- Flor de Lirio -->
+          <g class="flower-head" id="flower-head" transform="translate(100, 110)">
+            <!-- Pétalos Traseros -->
+            <path class="petal petal-back petal-1" d="M 0,0 C -35,-40 -45,-90 0,-100 C 45,-90 35,-40 0,0 Z" fill="#ffd13b"/>
+            <path class="petal petal-back petal-2" d="M 0,0 C -70,-20 -95,-60 -80,-85 C -50,-80 -20,-40 0,0 Z" fill="#fbc02d"/>
+            <path class="petal petal-back petal-3" d="M 0,0 C 70,-20 95,-60 80,-85 C 50,-80 20,-40 0,0 Z" fill="#fbc02d"/>
+
+            <!-- Pistilos / Estambres del Lirio -->
+            <g class="stamen-group">
+              <path class="stamen" d="M 0,-5 Q -15,-40 -20,-60" fill="none" stroke="#c79a00" stroke-width="2"/>
+              <circle cx="-20" cy="-60" r="3.5" fill="#8d5a00"/>
+              
+              <path class="stamen" d="M 0,-5 Q -5,-45 -8,-68" fill="none" stroke="#c79a00" stroke-width="2"/>
+              <circle cx="-8" cy="-68" r="3.5" fill="#8d5a00"/>
+
+              <path class="stamen" d="M 0,-5 Q 0,-48 0,-72" fill="none" stroke="#8d5a00" stroke-width="2.5"/>
+              <circle cx="0" cy="-72" r="4" fill="#5d3a00"/>
+
+              <path class="stamen" d="M 0,-5 Q 5,-45 8,-68" fill="none" stroke="#c79a00" stroke-width="2"/>
+              <circle cx="8" cy="-68" r="3.5" fill="#8d5a00"/>
+
+              <path class="stamen" d="M 0,-5 Q 15,-40 20,-60" fill="none" stroke="#c79a00" stroke-width="2"/>
+              <circle cx="20" cy="-60" r="3.5" fill="#8d5a00"/>
             </g>
 
-            <!-- Centro del Girasol -->
-            <circle cx="0" cy="0" r="32" fill="#78350f" />
-            <circle cx="0" cy="0" r="26" fill="#451a03" stroke="#92400e" stroke-width="2" stroke-dasharray="4,2" />
+            <!-- Pétalos Delanteros Principal -->
+            <path class="petal petal-front petal-4" d="M 0,0 C -50,-10 -65,-50 -40,-75 C -15,-55 -5,-20 0,0 Z" fill="#ffeb3b"/>
+            <path class="petal petal-front petal-5" d="M 0,0 C 50,-10 65,-50 40,-75 C 15,-55 5,-20 0,0 Z" fill="#ffeb3b"/>
+            <path class="petal petal-front petal-6" d="M 0,0 C -25,-30 -20,-80 0,-92 C 20,-80 25,-30 0,0 Z" fill="#fff176"/>
           </g>
         </svg>
       </div>
 
-      <div class="tap-hint" id="tapHint">
-        <span>✨ Toca la flor para ver la magia</span>
-      </div>
+      <div class="status-badge" id="status-badge">✨ ¡Floreció para ti!</div>
 
-      <div class="message-box">
-        <p>Un detalle especial para llenar tu día de luz, alegría y buena vibra en este comienzo de la primavera.</p>
-        
-        <div class="quote-card">
-          "Hay personas que son como el sol: llegan y todo a su alrededor se vuelve más brillante."
-        </div>
-      </div>
+      <p class="card-text">
+        Un detalle especial para llenar tu día de luz, alegría y buena vibra en este comienzo de la primavera.
+      </p>
 
-      <div class="audio-control" id="audioToggle">
-        <button class="audio-btn" id="audioIcon">▶</button>
-        <span class="audio-text" id="audioLabel">Música de primavera</span>
-      </div>
+      <blockquote class="quote">
+        "Hay personas que son como el sol: llegan y todo a su alrededor se vuelve más brillante."
+      </blockquote>
+
+      <button class="btn-music" id="btn-music">
+        <span>▶ Música de primavera</span>
+      </button>
     </div>
 
-    <div class="letter-section">
-      <div class="envelope" id="envelope">
-        <div class="envelope-title">
-          <span>✉️</span>
-          <span>Abrir mensaje para Ana</span>
-        </div>
-        <div class="letter-content" id="letterContent">
-          <p><strong>Hola Ana,</strong></p><br>
-          <p>No quería dejar pasar este 21 de marzo sin enviarte este pequeño detalle interactivo.</p><br>
-          <p>Que este día y esta nueva temporada te traigan muchísima alegría, paz y momentos bonitos. Gracias por siempre brindar una gran energía y bonita vibra.</p><br>
-          <p>¡Que tengas un excelente y radiante día de las flores amarillas! 🌼✨</p>
-        </div>
-      </div>
-    </div>
+    <button class="btn-primary" id="btn-modal">
+      ✉️ Abrir mensaje para Ana
+    </button>
 
     <footer>
       Hecho con mucho cariño para ti 💛
     </footer>
   </div>
 
-  <!-- Lógica JavaScript externa -->
+  <!-- Modal del Mensaje -->
+  <div class="modal-overlay" id="modal">
+    <div class="modal-content">
+      <button class="close-btn" id="close-modal">&times;</button>
+      <h2>Para Ana 🌸</h2>
+      <p>
+        Querida Ana,<br><br>
+        Te envío este pequeño detalle interactivo con este lirio para recordarte lo especial que eres. Que esta nueva etapa de primavera venga cargada de muchísima felicidad, éxito en todo lo que hagas y sonrisas todos los días.<br><br>
+        ¡Que tengas un excelente día! ✨
+      </p>
+      <div class="modal-heart">🪷</div>
+    </div>
+  </div>
+
+  <!-- Audio de fondo opcional -->
+  <audio id="bg-audio" loop src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=acoustic-guitars-ambient-112108.mp3"></audio>
+
   <script src="script.js"></script>
 </body>
 </html>
