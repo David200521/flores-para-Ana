@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       bgAudio.pause();
       isPlaying = false;
-      btnMusic.querySelector('span').textContent = "▶ Música de primavera";
+      btnMusic.querySelector('span').textContent = "▶ Reproducir: I Wanna Be Yours 🎵";
       btnMusic.style.background = "#fff59d";
     }
   });
