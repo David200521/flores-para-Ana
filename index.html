@@ -11,8 +11,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
-  <!-- Estilos CSS -->
-  <link rel="stylesheet" href="style.css">
+  <!-- Estilos CSS (con parámetro de versión para forzar actualización de caché) -->
+  <link rel="stylesheet" href="style.css?v=2">
 </head>
 <body>
 
@@ -79,7 +79,7 @@
       </blockquote>
 
       <button class="btn-music" id="btn-music">
-        <span>▶ I Wanna Be Yours 🎵</span>
+        <span>▶ Reproducir: I Wanna Be Yours 🎵</span>
       </button>
     </div>
 
@@ -107,23 +107,30 @@
     <div class="modal-content">
       <button class="close-btn" id="close-modal">&times;</button>
       <h2>Para Ana 🌸</h2>
-      <p>
-        Querida Ana,<br><br>
-        Te envío este pequeño detalle interactivo con este lirio para recordarte lo especial que eres. Que esta nueva etapa de primavera venga cargada de muchísima felicidad, éxito en todo lo que hagas y sonrisas todos los días.<br><br>
-        Te digo algo: volvería a recorrer el mismo camino, solo por volver a encontrarme contigo.<br><br>
-        Si me preguntaran: <i>"¿Qué te hubiera gustado cambiar?"</i>, realmente no tendría nada que reclamar.<br><br>
-        Si me dijeran que tengo la oportunidad de regresar, no cambiaría nada; lo haría todo igual, porque todo lo que hice hasta ahora me trajo contigo, a este lugar.<br><br>
-        Elegiría una vez más la misma vida, aún con sus dificultades, con la agonía; todo sea por volver a escuchar tu preciosa risa.<br><br>
-        Escogería ser yo una vez más, mi mismo cuerpo, mi misma forma de amar, aún con todos mis errores, aún con lo que no puedo reparar... pues admirar la belleza de tus ojos y tus cachetes es algo que no se puede igualar.<br><br>
-        Repetiría todo, una y otra vez, en este y todos los universos, en esta y las millones de líneas de tiempo. Hoy y mañana, por toda la eternidad, porque te quiero con todo lo que mi ser puede amar.<br><br>
-        ¿Y cómo te lo explico? Lo mucho que te quiero, sin tu presencia extraño, sin tus palabras me cala el silencio y sin tu calidez me siento vacío...<br><br>
-        Te elegiría a ti, sobre todos los demás, en esta y en mis infinitas vidas, en mis distintas versiones y reencarnaciones.
-      </p>
-      <div class="modal-heart">🪷</div>
+
+      <!-- Contenedor con scrollbar interno -->
+      <div class="modal-body">
+        <p>
+          Querida Ana,<br><br>
+          Te envío este pequeño detalle interactivo con este lirio para recordarte lo especial que eres. Que esta nueva etapa de primavera venga cargada de muchísima felicidad, éxito en todo lo que hagas y sonrisas todos los días.<br><br>
+          Te digo algo: volvería a recorrer el mismo camino, solo por volver a encontrarme contigo.<br><br>
+          Si me preguntaran: <i>"¿Qué te hubiera gustado cambiar?"</i>, realmente no tendría nada que reclamar.<br><br>
+          Si me dijeran que tengo la oportunidad de regresar, no cambiaría nada; lo haría todo igual, porque todo lo que hice hasta ahora me trajo contigo, a este lugar.<br><br>
+          Elegiría una vez más la misma vida, aún con sus dificultades, con la agonía; todo sea por volver a escuchar tu preciosa risa.<br><br>
+          Escogería ser yo una vez más, mi mismo cuerpo, mi misma forma de amar, aún con todos mis errores, aún con lo que no puedo reparar... pues admirar la belleza de tus ojos y tus cachetes es algo que no se puede igualar.<br><br>
+          Repetiría todo, una y otra vez, en este y todos los universos, en esta y las millones de líneas de tiempo. Hoy y mañana, por toda la eternidad, porque te quiero con todo lo que mi ser puede amar.<br><br>
+          ¿Y cómo te lo explico? Lo mucho que te quiero, sin tu presencia extraño, sin tus palabras me cala el silencio y sin tu calidez me siento vacío...<br><br>
+          Te elegiría a ti, sobre todos los demás, en esta y en mis infinitas vidas, en mis distintas versiones y reencarnaciones.
+        </p>
+        <div class="modal-heart">🪷</div>
+      </div>
+
+      <!-- Botón de cierre fijado al final del modal -->
+      <button class="btn-close-modal" id="btn-close-bottom">Cerrar carta 💛</button>
     </div>
   </div>
 
-  <!-- Audio de fondo (I Wanna Be Yours - Arctic Monkeys) -->
+  <!-- Audio de fondo -->
   <audio id="bg-audio" loop src="https://ia801503.us.archive.org/15/items/arctic-monkeys-i-wanna-be-yours/Arctic%20Monkeys%20-%20I%20Wanna%20Be%20Yours.mp3"></audio>
 
   <script src="script.js"></script>

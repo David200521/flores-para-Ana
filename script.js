@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const statusBadge = document.getElementById('status-badge');
 
   flowerContainer.addEventListener('click', () => {
-    // Lanzar confeti
     confetti({
       particleCount: 50,
       spread: 60,
@@ -36,10 +35,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // 3. Modal de Mensaje
+  // 3. Modal de Mensaje y Control de Cierre
   const btnModal = document.getElementById('btn-modal');
   const closeModal = document.getElementById('close-modal');
+  const btnCloseBottom = document.getElementById('btn-close-bottom');
   const modal = document.getElementById('modal');
+
+  const cerrarModal = () => {
+    modal.classList.remove('active');
+  };
 
   btnModal.addEventListener('click', () => {
     modal.classList.add('active');
@@ -51,13 +55,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  closeModal.addEventListener('click', () => {
-    modal.classList.remove('active');
-  });
+  if (closeModal) closeModal.addEventListener('click', cerrarModal);
+  if (btnCloseBottom) btnCloseBottom.addEventListener('click', cerrarModal);
 
   modal.addEventListener('click', (e) => {
     if (e.target === modal) {
-      modal.classList.remove('active');
+      cerrarModal();
     }
   });
 
